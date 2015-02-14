@@ -2,8 +2,14 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+<<<<<<< HEAD
 # Assets should be precompiled for production (so we don't need the gems loaded then)
 Bundler.require(*Rails.groups(assets: %w(development test)))
+=======
+# Require the gems listed in Gemfile, including any gems
+# you've limited to :test, :development, or :production.
+Bundler.require(*Rails.groups)
+>>>>>>> modify-README
 
 module FirstApp
   class Application < Rails::Application
@@ -18,5 +24,11 @@ module FirstApp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+<<<<<<< HEAD
+=======
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_record.raise_in_transactional_callbacks = true
+>>>>>>> modify-README
   end
 end
